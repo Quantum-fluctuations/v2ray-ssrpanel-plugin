@@ -34,8 +34,7 @@ curl -L -s https://raw.githubusercontent.com/ColetteContreras/v2ray-ssrpanel-plu
 
 ### V2ray Configuration demo
 
-```json
-{
+```{
   "log": {
     "loglevel": "debug"
   },
@@ -48,28 +47,43 @@ curl -L -s https://raw.githubusercontent.com/ColetteContreras/v2ray-ssrpanel-plu
     ]
   },
   "stats": {},
-  "inbounds": [{
-    "port": 10086,
-    "protocol": "vmess",
-    "tag": "proxy"
-  },{
-    "listen": "127.0.0.1",
-    "port": 10085,
-    "protocol": "dokodemo-door",
-    "settings": {
-      "address": "127.0.0.1"
+  "inbounds": [
+    {
+      "port": 10087,
+      "protocol": "vmess",
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+        "path": "/btfly"
+        }
+      },
+      "tag": "proxy"
     },
-    "tag": "api"
-  }],
-  "outbounds": [{
-    "protocol": "freedom"
-  }],
+    {
+      "listen": "127.0.0.1",
+      "port": 10550,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "api"
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ],
   "routing": {
-    "rules": [{
-      "type": "field",
-      "inboundTag": [ "api" ],
-      "outboundTag": "api"
-    }],
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "api"
+        ],
+        "outboundTag": "api"
+      }
+    ],
     "strategy": "rules"
   },
   "policy": {
@@ -84,34 +98,23 @@ curl -L -s https://raw.githubusercontent.com/ColetteContreras/v2ray-ssrpanel-plu
       "statsInboundDownlink": true
     }
   },
-
   "ssrpanel": {
-    // Node id on your SSR Panel
-    "nodeId": 1,
-    // every N seconds
+    "nodeId": 33,
     "checkRate": 60,
-    // change this to true if you want to ignore users which has an empty vmess_id
-    "ignoreEmptyVmessID": false,
-    // user config
     "user": {
-      // inbound tag, which inbound you would like add user to
       "inboundTag": "proxy",
       "level": 0,
       "alterId": 16,
       "security": "none"
     },
-    // db connection
     "mysql": {
-      "host": "127.0.0.1",
-      "port": 3306,
-      "user": "root",
-      "password": "ssrpanel",
-      "dbname": "ssrpanel"
+      "host": "",
+      "port": ,
+      "user": "",
+      "password": "",
+      "dbname": ""
     }
   }
-
-
-
 }
 ```
 
