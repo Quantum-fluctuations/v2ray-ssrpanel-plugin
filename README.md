@@ -34,7 +34,8 @@ curl -L -s https://raw.githubusercontent.com/ColetteContreras/v2ray-ssrpanel-plu
 
 ### V2ray Configuration demo
 
-```{
+```
+{
   "log": {
     "loglevel": "debug"
   },
