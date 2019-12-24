@@ -23,7 +23,7 @@ you may want to see docs, all the things as same as the official docs except ins
 [V2ray installation](https://www.v2ray.com/en/welcome/install.html)
 
 ```
-curl -L -s https://raw.githubusercontent.com/ColetteContreras/v2ray-ssrpanel-plugin/master/install-release.sh | sudo bash
+curl -L -s https://raw.githubusercontent.com/lovelyou/v2ray-ssrpanel-plugin/master/install-release.sh | sudo bash
 ```
 
 #### Uninstall
