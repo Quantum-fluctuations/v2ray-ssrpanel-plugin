@@ -208,13 +208,13 @@ getVersion(){
         fi
         if [[ $? -ne 0 ]] || [[ $NEW_VER == "" ]]; then
             colorEcho ${RED} "Failed to fetch release information. Please check your network or try again."
-            return 3
+            return 4
         elif [[ $RETVAL -ne 0 ]];then
-            return 2
+            return 4
         elif [[ `echo $NEW_VER | cut -d. -f-2` != `echo $CUR_VER | cut -d. -f-2` ]];then
-            return 1
+            return 4
         fi
-        return 0
+        return 4
     fi
 }
 
