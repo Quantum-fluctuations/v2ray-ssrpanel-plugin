@@ -119,6 +119,16 @@ curl -L -s https://raw.githubusercontent.com/ColetteContreras/v2ray-ssrpanel-plu
 }
 ```
 
+```
+mkdir -p /usr/bin/v2ray && cd /usr/bin/v2ray
+wget https://github.com/ColetteContreras/v2ray-ssrpanel-plugin/releases/download/v0.2.5/v2ray-linux-64.zip
+unzip v2ray-linux-64.zip
+rm -rf v2ray-linux-64.zip
+chmod +x v2ray && chmod +x v2ctl
+
+```
+
+
 ### Contributing
 
 Read [WiKi](https://github.com/ColetteContreras/v2ray-ssrpanel-plugin/wiki) carefully before submitting issues.
